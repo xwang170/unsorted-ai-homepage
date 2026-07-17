@@ -50,7 +50,7 @@ export default function Home() {
       <nav className="siteNav" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Unsorted AI home">
           <Image
-            src={asset("/logo/unsorted-logo.png")}
+            src={asset("/logo/unsorted-logo-dark.png")}
             alt="Unsorted"
             width={520}
             height={72}
@@ -216,7 +216,7 @@ export default function Home() {
         </div>
         <footer>
           <Image
-            src={asset("/logo/unsorted-logo.png")}
+            src={asset("/logo/unsorted-logo-white.png")}
             alt="Unsorted"
             width={520}
             height={72}

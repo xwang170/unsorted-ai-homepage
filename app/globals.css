@@ -71,8 +71,6 @@ a:focus-visible {
   display: inline-flex;
   width: 142px;
   padding: 10px 12px;
-  border-radius: 6px;
-  background: var(--ink);
 }
 
 .brand img {
@@ -561,9 +559,7 @@ footer {
 footer img {
   width: 160px;
   height: auto;
-  border-radius: 6px;
   padding: 10px 12px;
-  background: var(--ink);
 }
 
 footer p,

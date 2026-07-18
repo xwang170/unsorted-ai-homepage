@@ -5,7 +5,7 @@ import { asset } from "./basePath";
 const socialImage = "/og.png";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://unsorted.ai"),
+  metadataBase: new URL("https://www.unsorted.ai"),
   title: "Unsorted AI | The First and Last 100 Yards",
   description:
     "The physical access layer for last-mile delivery. A wheel-legged robot for the curbs, stairs, and doors that keep buildings out of a sidewalk robot's reach.",

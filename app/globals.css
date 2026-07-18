@@ -129,46 +129,76 @@ a:focus-visible {
   text-align: center;
 }
 
-/* Robot fills the lower two-thirds of the single hero view and is feathered
-   into the paper at its top edge so copy and image read as one scene. */
-.heroBg {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 50%;
+/* The cut-out robot sits directly on the paper background — no photo
+   rectangle, no seam — so copy and robot read as one continuous scene.
+   It fills whatever space remains under the copy on any viewport. */
+.heroRobot {
+  position: relative;
   z-index: 1;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 26%, #000 94%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 26%, #000 94%, transparent 100%);
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 0;
+  padding-bottom: 56px;
   animation: heroRise 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: 0.35s;
 }
 
-.heroBg img {
-  object-fit: cover;
-  object-position: 50% 28%;
+.heroRobotFloat {
+  position: relative;
+  z-index: 2;
+  animation: robotFloat 4.6s ease-in-out infinite alternate;
   will-change: transform;
-  animation: heroKen 24s ease-in-out infinite alternate;
 }
 
-@keyframes heroKen {
+.heroRobotFloat img {
+  width: min(46vw, 58svh, 640px);
+  height: auto;
+}
+
+.heroShadow {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  z-index: 1;
+  width: min(38vw, 520px);
+  height: 44px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(18, 18, 18, 0.3), transparent 68%);
+  animation: shadowPulse 4.6s ease-in-out infinite alternate;
+}
+
+@keyframes robotFloat {
   from {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: translateY(0) rotate(0deg);
   }
   to {
-    transform: scale(1.16) translate3d(-2.5%, -2%, 0);
+    transform: translateY(-16px) rotate(-0.6deg);
+  }
+}
+
+@keyframes shadowPulse {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+  to {
+    opacity: 0.55;
+    transform: translateX(-50%) scaleX(0.9);
   }
 }
 
 @keyframes heroRise {
   from {
     opacity: 0;
-    transform: translate(-50%, 6%);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
 }
 
@@ -685,12 +715,18 @@ footer a {
     font-size: 0.98rem;
   }
 
-  .heroBg {
-    height: 45%;
+  .heroRobot {
+    padding-bottom: 40px;
   }
 
-  .heroBg img {
-    object-position: 62% 32%;
+  .heroRobotFloat img {
+    width: min(82vw, 46svh);
+  }
+
+  .heroShadow {
+    bottom: 22px;
+    width: 64vw;
+    height: 32px;
   }
 
   .sectionShell,

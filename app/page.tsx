@@ -76,14 +76,17 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="heroBg" aria-hidden="true">
-          <Image
-            src={asset("/assets/deck/cover-000.jpg")}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-          />
+        <div className="heroRobot">
+          <div className="heroRobotFloat">
+            <Image
+              src={asset("/assets/robot-cutout.webp")}
+              alt="Unsorted V2 delivery robot"
+              width={831}
+              height={785}
+              priority
+            />
+          </div>
+          <span className="heroShadow" aria-hidden="true" />
         </div>
       </section>
 

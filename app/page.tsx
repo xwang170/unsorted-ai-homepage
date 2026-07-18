@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { asset } from "./basePath";
+import FleetCanvas from "./components/FleetCanvas";
+import Reticle from "./components/Reticle";
+import Reveal from "./components/Reveal";
 
 const capabilities = [
   {
@@ -41,6 +44,9 @@ const routeSteps = [
 export default function Home() {
   return (
     <main>
+      <Reticle />
+      <Reveal />
+      <div className="grain" aria-hidden="true" />
       <nav className="siteNav" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Unsorted AI home">
           <Image
@@ -62,6 +68,7 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="top">
+        <FleetCanvas />
         <div className="heroCopy">
           <p className="kicker">Physical AI for last-mile logistics</p>
           <h1>
@@ -74,6 +81,10 @@ export default function Home() {
           <a className="pillButton" href="#platform">
             Meet the platform <span aria-hidden="true">↘</span>
           </a>
+          <div className="scrollcue">
+            <span aria-hidden="true" />
+            follow it in
+          </div>
         </div>
 
         <div className="heroRobot">
@@ -85,6 +96,14 @@ export default function Home() {
               height={785}
               priority
             />
+            <span
+              className="robotScan"
+              aria-hidden="true"
+              style={{
+                WebkitMaskImage: `url(${asset("/assets/robot-cutout.webp")})`,
+                maskImage: `url(${asset("/assets/robot-cutout.webp")})`,
+              }}
+            />
           </div>
           <span className="heroShadow" aria-hidden="true" />
         </div>
@@ -92,9 +111,9 @@ export default function Home() {
 
       <section className="platform sectionShell" id="platform">
         <div className="sectionHeading centered">
-          <p className="kicker">The missing leg</p>
-          <h2>The miles are automated. The doorway is not.</h2>
-          <p>
+          <p className="kicker" data-reveal>01 — The missing leg</p>
+          <h2 data-reveal>The miles are automated. The doorway is not.</h2>
+          <p data-reveal>
             The hardest part of delivery is the most ordinary: the short,
             irregular journey from vehicle or drone to shelf, lobby, and front
             door. That is the terrain Unsorted is designed to own.
@@ -103,7 +122,7 @@ export default function Home() {
 
         <div className="capabilityList">
           {capabilities.map((item) => (
-            <article className="capabilityCard" key={item.number}>
+            <article className="capabilityCard" key={item.number} data-reveal>
               <span className="cardNumber">{item.number}</span>
               <div>
                 <h3>{item.title}</h3>
@@ -116,9 +135,9 @@ export default function Home() {
 
       <section className="routeSection" id="route">
         <div className="sectionHeading centered inverse">
-          <p className="kicker">One robot. Every handoff.</p>
-          <h2>You cover the miles. We close the doorstep.</h2>
-          <p>
+          <p className="kicker" data-reveal>02 — One robot. Every handoff.</p>
+          <h2 data-reveal>You cover the miles. We close the doorstep.</h2>
+          <p data-reveal>
             The same platform connects drone pads, autonomous vehicles, stores,
             and front doors — the constant first and last leg across delivery
             networks.
@@ -127,7 +146,7 @@ export default function Home() {
 
         <div className="routeFlow" aria-label="Unsorted delivery flow">
           {routeSteps.map((step, index) => (
-            <div className="routeItem" key={step.title}>
+            <div className="routeItem" key={step.title} data-reveal>
               <article className={step.featured ? "routeCard featured" : "routeCard"}>
                 <span>{step.label}</span>
                 <h3>{step.title}</h3>
@@ -140,7 +159,7 @@ export default function Home() {
           ))}
         </div>
 
-        <p className="routeNote">
+        <p className="routeNote" data-reveal>
           From dark store to drone. From pad to doorstep. From car to front
           door.
         </p>
@@ -148,15 +167,15 @@ export default function Home() {
 
       <section className="proofSection sectionShell" id="proof">
         <div className="proofIntro">
-          <p className="kicker">Working hardware</p>
-          <h2>Built to leave flat pavement.</h2>
-          <p>
+          <p className="kicker" data-reveal>03 — Working hardware</p>
+          <h2 data-reveal>Built to leave flat pavement.</h2>
+          <p data-reveal>
             Sidewalk robots stop where the real world starts. Unsorted is being
             built around universal urban terrain from day one.
           </p>
         </div>
 
-        <div className="comparison" role="group" aria-label="Mobility capability comparison">
+        <div className="comparison" role="group" aria-label="Mobility capability comparison" data-reveal>
           <article className="comparisonCard mutedCard">
             <p className="comparisonLabel">Flat-pavement robots</p>
             <h3>The route ends early.</h3>
@@ -181,9 +200,9 @@ export default function Home() {
         </div>
 
         <div className="proofStatement">
-          <p>From live hardware to field validation.</p>
-          <h2>Not another cooler on wheels.</h2>
-          <p>
+          <p data-reveal>From live hardware to field validation.</p>
+          <h2 data-reveal>Not another cooler on wheels.</h2>
+          <p data-reveal>
             A compact, deferential robot for the part of logistics that still
             looks exactly like the human world.
           </p>
@@ -196,11 +215,16 @@ export default function Home() {
           <span>Physical intelligence · 2026</span>
         </div>
         <div className="missionCopy">
-          <p className="kicker">The end of the 100-yard handoff.</p>
-          <h2>Let every delivery make it all the way.</h2>
-          <a className="pillButton lightButton" href="mailto:hello@unsorted.ai?subject=Let%E2%80%99s%20talk%20about%20the%20last%20100%20yards">
+          <p className="kicker" data-reveal>The end of the 100-yard handoff.</p>
+          <h2 data-reveal>Let every delivery make it all the way.</h2>
+          <a className="pillButton lightButton" data-reveal href="mailto:hello@unsorted.ai?subject=Let%E2%80%99s%20talk%20about%20the%20last%20100%20yards">
             Talk to Unsorted <span aria-hidden="true">↗</span>
           </a>
+          <p className="missionWhisper" data-reveal>
+            <a href="https://xwang170.github.io/unsorted-site/">
+              or steer it with your eyes →
+            </a>
+          </p>
         </div>
         <footer>
           <Image

@@ -9,6 +9,7 @@
   --light-line: rgba(255, 255, 255, 0.17);
   --display: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 }
 
 * {
@@ -239,9 +240,10 @@ a:focus-visible {
 
 .kicker {
   color: var(--orange);
-  font-size: 0.92rem;
-  font-weight: 750;
-  letter-spacing: 0.18em;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
@@ -648,6 +650,203 @@ footer a {
   text-underline-offset: 4px;
 }
 
+/* ---- perception-site DNA: living canvas, reticle, reveals, HUD accents ---- */
+
+.fleetCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* keep the copy zone (top center) clean — the network lives at the edges */
+  -webkit-mask-image: radial-gradient(58% 46% at 50% 30%, transparent 42%, #000 78%);
+  mask-image: radial-gradient(58% 46% at 50% 30%, transparent 42%, #000 78%);
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.reticle-on,
+.reticle-on a,
+.reticle-on button {
+  cursor: none;
+}
+
+.reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reticle.on {
+  opacity: 1;
+}
+
+.reticleRing {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(255, 75, 0, 0.75);
+  border-radius: 50%;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s;
+}
+
+.reticle.hover .reticleRing {
+  transform: scale(1.5);
+  border-color: var(--ink);
+}
+
+.reticleDot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reveals-on [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(6px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.9s;
+}
+
+.reveals-on [data-reveal].in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.scrollcue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 42px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.scrollcue span {
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(var(--orange), transparent);
+  animation: cue 2s ease-in-out infinite;
+}
+
+@keyframes cue {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.heroCopy > .scrollcue {
+  animation-delay: 0.54s;
+}
+
+/* orange scan line sweeping the robot, clipped to the cutout's silhouette */
+.robotScan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.robotScan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40%;
+  height: 34%;
+  background: linear-gradient(
+    rgba(255, 75, 0, 0),
+    rgba(255, 75, 0, 0.16),
+    rgba(255, 106, 43, 0.42),
+    rgba(255, 75, 0, 0.16),
+    rgba(255, 75, 0, 0)
+  );
+  animation: sweep 4.5s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+@keyframes sweep {
+  0% {
+    top: -40%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+.pillButton span {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pillButton:hover span {
+  transform: translate(4px, 4px);
+}
+
+.navCta {
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.navCta:hover {
+  opacity: 1;
+  color: #fff;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.missionWhisper {
+  margin-top: 26px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.missionWhisper a {
+  color: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 3px;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.missionWhisper a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
 @media (max-width: 980px) {
   .sectionShell,
   .routeSection,
@@ -719,6 +918,10 @@ footer a {
 
   .heroDek {
     font-size: 0.98rem;
+  }
+
+  .fleetCanvas {
+    display: none;
   }
 
   .heroRobot {

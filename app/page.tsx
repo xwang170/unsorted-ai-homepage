@@ -59,7 +59,7 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#platform">Platform</a>
-          <a href="#proof">Proof</a>
+          <a href="#proof">Hardware</a>
           <a href="#mission">Mission</a>
         </div>
         <a className="navCta" href="mailto:hello@unsorted.ai?subject=Unsorted%20partnership">
@@ -200,7 +200,7 @@ export default function Home() {
         </div>
 
         <div className="proofStatement">
-          <p data-reveal>From live hardware to field validation.</p>
+          <p data-reveal>Live hardware today. Field validation next.</p>
           <h2 data-reveal>Not another cooler on wheels.</h2>
           <p data-reveal>
             A compact, deferential robot for the part of logistics that still

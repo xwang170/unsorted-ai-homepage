@@ -19,12 +19,6 @@ const capabilities = [
   },
 ];
 
-const proofPoints = [
-  ["5 kg", "V0 payload"],
-  ["1.5 m/s", "Current speed"],
-  ["30 m", "ToF + RGB detection"],
-];
-
 const routeSteps = [
   {
     label: "Middle mile",
@@ -82,27 +76,18 @@ export default function Home() {
           </a>
         </div>
 
-        <figure className="heroMedia" id="platform">
+        <div className="heroBg" aria-hidden="true">
           <Image
             src={asset("/assets/deck/cover-000.jpg")}
-            alt="V2 delivery robot concept outside a logistics facility"
+            alt=""
             fill
             priority
-            sizes="(max-width: 760px) 100vw, 94vw"
+            sizes="100vw"
           />
-        </figure>
-
-        <div className="proofStrip" aria-label="Current V0 platform specifications">
-          {proofPoints.map(([value, label]) => (
-            <div className="proofPoint" key={label}>
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </div>
-          ))}
         </div>
       </section>
 
-      <section className="platform sectionShell">
+      <section className="platform sectionShell" id="platform">
         <div className="sectionHeading centered">
           <p className="kicker">The missing leg</p>
           <h2>The miles are automated. The doorway is not.</h2>

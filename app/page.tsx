@@ -203,10 +203,11 @@ export default function Home() {
 
         <div className="proofStatement">
           <p data-reveal>Live hardware today. Field validation next.</p>
-          <h2 data-reveal>Not another cooler on wheels.</h2>
+          <h2 data-reveal>Built to go wherever the route goes.</h2>
           <p data-reveal>
-            A compact, deferential robot for the part of logistics that still
-            looks exactly like the human world.
+            Sidewalks and stairwells, dark stores and doorsteps, food bags and
+            parcels — one compact, deferential robot for every leg of the
+            route that still looks like the human world.
           </p>
         </div>
       </section>

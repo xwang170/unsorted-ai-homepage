@@ -69,7 +69,7 @@ a:focus-visible {
 
 .brand {
   display: inline-flex;
-  width: 190px;
+  width: 236px;
   padding: 10px 12px;
 }
 
@@ -81,8 +81,8 @@ a:focus-visible {
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 36px;
-  font-size: 1.04rem;
+  gap: 38px;
+  font-size: 1.16rem;
   font-weight: 600;
 }
 
@@ -100,8 +100,8 @@ a:focus-visible {
   justify-self: end;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 14px 22px;
-  font-size: 1rem;
+  padding: 15px 24px;
+  font-size: 1.08rem;
   font-weight: 650;
 }
 
@@ -235,7 +235,7 @@ a:focus-visible {
 
 .kicker {
   color: var(--orange);
-  font-size: 0.76rem;
+  font-size: 0.92rem;
   font-weight: 750;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -249,10 +249,10 @@ h2 {
 }
 
 h1 {
-  max-width: 1100px;
-  margin-top: 22px;
-  font-size: clamp(3.4rem, 5.9vw, 6.1rem);
-  line-height: 0.94;
+  max-width: 1240px;
+  margin-top: 16px;
+  font-size: clamp(3.9rem, 6.9vw, 7.2rem);
+  line-height: 0.93;
 }
 
 h1 span {
@@ -261,11 +261,11 @@ h1 span {
 }
 
 .heroDek {
-  max-width: 660px;
-  margin-top: 30px;
+  max-width: 740px;
+  margin-top: 22px;
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.22rem;
+  line-height: 1.55;
 }
 
 .pillButton {
@@ -273,14 +273,14 @@ h1 span {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  min-height: 54px;
-  margin-top: 30px;
+  min-height: 60px;
+  margin-top: 26px;
   border: 1px solid var(--ink);
   border-radius: 999px;
-  padding: 0 25px;
+  padding: 0 30px;
   color: #fff;
   background: var(--ink);
-  font-size: 0.94rem;
+  font-size: 1.08rem;
   font-weight: 650;
   transition: transform 180ms ease, background 180ms ease;
 }
@@ -297,7 +297,7 @@ h1 span {
 .sectionShell,
 .routeSection,
 .mission {
-  padding: 136px 4vw;
+  padding: 88px 4vw;
 }
 
 .sectionHeading {
@@ -311,22 +311,22 @@ h1 span {
 
 .sectionHeading h2,
 .proofIntro h2 {
-  margin-top: 22px;
-  font-size: clamp(3.6rem, 6.2vw, 6.7rem);
+  margin-top: 16px;
+  font-size: clamp(3.6rem, 6.4vw, 7rem);
   line-height: 0.94;
 }
 
 .sectionHeading > p:last-child,
 .proofIntro > p:last-child {
-  max-width: 650px;
-  margin: 28px auto 0;
+  max-width: 720px;
+  margin: 22px auto 0;
   color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.65;
+  font-size: 1.18rem;
+  line-height: 1.6;
 }
 
 .capabilityList {
-  margin-top: 80px;
+  margin-top: 52px;
   border-top: 1px solid var(--line);
 }
 
@@ -336,13 +336,13 @@ h1 span {
   gap: 20px;
   align-items: start;
   border-bottom: 1px solid var(--line);
-  padding: 34px 0;
+  padding: 28px 0;
 }
 
 .cardNumber {
   color: var(--orange);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
 }
 
 .capabilityCard > div {
@@ -362,10 +362,10 @@ h1 span {
 }
 
 .capabilityCard p {
-  max-width: 620px;
+  max-width: 680px;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.14rem;
+  line-height: 1.58;
 }
 
 .routeSection {
@@ -382,7 +382,7 @@ h1 span {
   grid-template-columns: 1fr 1.12fr 1fr;
   gap: 46px;
   max-width: 1280px;
-  margin: 84px auto 0;
+  margin: 52px auto 0;
 }
 
 .routeItem {
@@ -390,7 +390,7 @@ h1 span {
 }
 
 .routeCard {
-  min-height: 310px;
+  min-height: 260px;
   border: 1px solid var(--line);
   padding: 28px;
   background: #fff;
@@ -404,10 +404,10 @@ h1 span {
 
 .routeCard > span {
   display: block;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   color: var(--muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.74rem;
+  font-size: 0.88rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -421,8 +421,9 @@ h1 span {
 }
 
 .routeCard p {
-  margin-top: 22px;
+  margin-top: 18px;
   color: var(--muted);
+  font-size: 1.12rem;
   line-height: 1.5;
 }
 
@@ -440,7 +441,7 @@ h1 span {
 
 .routeNote {
   max-width: 900px;
-  margin: 62px auto 0;
+  margin: 44px auto 0;
   color: var(--ink);
   font-family: var(--display);
   font-size: clamp(1.7rem, 2.6vw, 3rem);
@@ -475,16 +476,16 @@ h1 span {
 .comparison {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 88px;
+  margin-top: 52px;
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
 
 .comparisonCard {
-  min-height: 560px;
+  min-height: 430px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 38px;
+  padding: 34px;
 }
 
 .comparisonCard.unsortedCard {
@@ -494,9 +495,9 @@ h1 span {
 }
 
 .comparisonLabel {
-  margin-bottom: 76px;
+  margin-bottom: 44px;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: 0.9rem;
   font-weight: 750;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -507,8 +508,9 @@ h1 span {
 }
 
 .comparisonCard dl {
-  margin-top: 72px;
+  margin-top: 40px;
   border-top: 1px solid var(--line);
+  font-size: 1.1rem;
 }
 
 .unsortedCard dl {
@@ -543,12 +545,12 @@ h1 span {
   display: grid;
   grid-template-columns: 0.55fr 1fr;
   column-gap: 60px;
-  margin-top: 130px;
+  margin-top: 78px;
 }
 
 .proofStatement > p:first-child {
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 650;
 }
 
@@ -559,16 +561,15 @@ h1 span {
 
 .proofStatement > p:last-child {
   grid-column: 2;
-  max-width: 620px;
-  margin-top: 28px;
+  max-width: 680px;
+  margin-top: 22px;
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 1.18rem;
+  line-height: 1.6;
 }
 
 .mission {
   display: flex;
-  min-height: 100svh;
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
@@ -579,9 +580,9 @@ h1 span {
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  padding-bottom: 25px;
+  padding-bottom: 22px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.34);
-  font-size: 0.76rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -589,7 +590,7 @@ h1 span {
 
 .missionCopy {
   max-width: 1100px;
-  margin: 150px auto;
+  margin: 84px auto;
   text-align: center;
 }
 
@@ -624,7 +625,7 @@ footer {
 }
 
 footer img {
-  width: 160px;
+  width: 210px;
   height: auto;
   padding: 10px 12px;
 }
@@ -632,7 +633,7 @@ footer img {
 footer p,
 footer a {
   color: rgba(255, 255, 255, 0.86);
-  font-size: 0.84rem;
+  font-size: 1rem;
   line-height: 1.45;
 }
 
@@ -646,7 +647,7 @@ footer a {
   .sectionShell,
   .routeSection,
   .mission {
-    padding: 110px 5vw;
+    padding: 78px 5vw;
   }
 
   .hero {
@@ -685,7 +686,7 @@ footer a {
   }
 
   .brand {
-    width: 152px;
+    width: 178px;
   }
 
   .navLinks {
@@ -693,8 +694,8 @@ footer a {
   }
 
   .navCta {
-    padding: 12px 16px;
-    font-size: 0.86rem;
+    padding: 13px 18px;
+    font-size: 0.95rem;
   }
 
   .hero {
@@ -732,7 +733,7 @@ footer a {
   .sectionShell,
   .routeSection,
   .mission {
-    padding: 90px 5vw;
+    padding: 68px 5vw;
   }
 
   .sectionHeading.centered {
@@ -821,16 +822,13 @@ footer a {
     margin-top: 24px;
   }
 
-  .mission {
-    min-height: 920px;
-  }
 
   .missionTopline span:last-child {
     display: none;
   }
 
   .missionCopy {
-    margin: 130px 0;
+    margin: 64px 0;
     text-align: left;
   }
 

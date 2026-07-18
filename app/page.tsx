@@ -7,7 +7,7 @@ import Reveal from "./components/Reveal";
 const capabilities = [
   {
     number: "01",
-    title: "Bipedal mobility",
+    title: "Wheel-legged mobility",
     copy: "Climbs curbs and stairs, crosses thresholds, and moves through the infrastructure people already use.",
   },
   {
@@ -25,8 +25,8 @@ const capabilities = [
 const routeSteps = [
   {
     label: "Middle mile",
-    title: "Drone or vehicle",
-    copy: "Fast, efficient movement across distance.",
+    title: "Vehicle, store, or courier",
+    copy: "Your network covers the distance.",
   },
   {
     label: "The constant",
@@ -36,7 +36,7 @@ const routeSteps = [
   },
   {
     label: "Final leg",
-    title: "Shelf, pad, or door",
+    title: "Shelf, lobby, or door",
     copy: "The last hundred yards, completed end to end.",
   },
 ];
@@ -70,13 +70,14 @@ export default function Home() {
       <section className="hero" id="top">
         <FleetCanvas />
         <div className="heroCopy">
-          <p className="kicker">Physical AI for last-mile logistics</p>
+          <p className="kicker">The physical access layer for last-mile delivery</p>
           <h1>
             <span>We own the first and last 100 yards.</span>
           </h1>
           <p className="heroDek">
-            Autonomous systems cover the miles. Unsorted closes the doorstep
-            with a compact robot built for curbs, stairs, doors, and handoffs.
+            Delivery robots stop at the curb. Unsorted&rsquo;s wheel-legged
+            robot climbs the stairs, crosses the threshold, and finishes the
+            delivery at the door.
           </p>
           <a className="pillButton" href="#platform">
             Meet the platform <span aria-hidden="true">↘</span>
@@ -111,12 +112,13 @@ export default function Home() {
 
       <section className="platform sectionShell" id="platform">
         <div className="sectionHeading centered">
-          <p className="kicker" data-reveal>01 — The missing leg</p>
-          <h2 data-reveal>The miles are automated. The doorway is not.</h2>
+          <p className="kicker" data-reveal>01 — The access gap</p>
+          <h2 data-reveal>Delivery ends where the sidewalk ends.</h2>
           <p data-reveal>
-            The hardest part of delivery is the most ordinary: the short,
-            irregular journey from vehicle or drone to shelf, lobby, and front
-            door. That is the terrain Unsorted is designed to own.
+            The hardest part of delivery is the most ordinary: the curbs,
+            stairs, lobbies, and front doors that keep whole buildings out of a
+            robot&rsquo;s reach. That is the terrain Unsorted is designed to
+            own.
           </p>
         </div>
 
@@ -138,9 +140,8 @@ export default function Home() {
           <p className="kicker" data-reveal>02 — One robot. Every handoff.</p>
           <h2 data-reveal>You cover the miles. We close the doorstep.</h2>
           <p data-reveal>
-            The same platform connects drone pads, autonomous vehicles, stores,
-            and front doors — the constant first and last leg across delivery
-            networks.
+            One platform runs the leg every delivery network still does by
+            hand: from vehicle, store, or curb to the front door.
           </p>
         </div>
 
@@ -160,7 +161,7 @@ export default function Home() {
         </div>
 
         <p className="routeNote" data-reveal>
-          From dark store to drone. From pad to doorstep. From car to front
+          From dark store to lobby. From curb to doorstep. From car to front
           door.
         </p>
       </section>
@@ -171,7 +172,8 @@ export default function Home() {
           <h2 data-reveal>Built to leave flat pavement.</h2>
           <p data-reveal>
             Sidewalk robots stop where the real world starts. Unsorted is being
-            built around universal urban terrain from day one.
+            built around universal urban terrain from day one. Amazon bought
+            its answer — RIVR — in March. Everyone else still needs one.
           </p>
         </div>
 

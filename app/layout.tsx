@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://unsorted.ai"),
   title: "Unsorted AI | The First and Last 100 Yards",
   description:
-    "Physical AI for last-mile and hyperlocal logistics. Drones and autonomous vehicles cover the miles; Unsorted closes the doorstep.",
+    "The physical access layer for last-mile delivery. A wheel-legged robot for the curbs, stairs, and doors that keep buildings out of a sidewalk robot's reach.",
   icons: {
     icon: asset("/logo/unsorted-logo-crop.png"),
   },
